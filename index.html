@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Презентація: Вступ до Markdown</title>
+    <title>Презентація: Повний курс по Markdown</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
@@ -20,8 +20,13 @@
             <section
                 data-background-image="https://images.unsplash.com/photo-1550745165-9bc0b252726a?auto=format&fit=crop&w=1740"
                 data-background-opacity="0.5">
-                <h1>Markdown: Швидкий старт</h1>
+                <h1>Markdown: Повний курс</h1>
                 <p>Як форматувати документи, не відволікаючись від змісту</p>
+                <aside class="notes">
+                    Почніть з питання до аудиторії: "Хто з вас вже чув про Markdown або використовував його?" Це
+                    допоможе
+                    зрозуміти рівень аудиторії.
+                </aside>
             </section>
 
             <section
@@ -29,32 +34,45 @@
                 data-background-opacity="0.4">
                 <h2>План лекції</h2>
                 <ul>
-                    <li class="fragment">Що таке Markdown і навіщо він?</li>
+                    <li class="fragment">Що таке Markdown і чому він популярний?</li>
                     <li class="fragment">Переваги над MS Word.</li>
                     <li class="fragment">Базовий синтаксис.</li>
-                    <li class="fragment">Розширені можливості: формули, діаграми.</li>
-                    <li class="fragment">Інструменти та екосистема.</li>
-                    <li class="fragment">Практичне завдання.</li>
+                    <li class="fragment">Розширені можливості: таблиці, списки завдань.</li>
+                    <li class="fragment">Корисні поради: екранування, лінтери.</li>
+                    <li class="fragment">Магія: формули та діаграми.</li>
+                    <li class="fragment">Екосистема та практичне завдання.</li>
                 </ul>
             </section>
 
             <section>
-                <h2>Що таке Markdown?</h2>
-                <div style="display: flex; align-items: center; justify-content: center;">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon"
-                        style="height: 100px; width: 100px; margin-right: 30px;">
+                <section>
+                    <h2>Що таке Markdown?</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon"
+                            style="height: 100px; width: 100px; margin-right: 30px;">
+                        <ul>
+                            <li>Проста мова розмітки для форматування тексту.</li>
+                            <li>Читабельність: документ легко читати навіть без форматування.</li>
+                            <li>Конвертація: легко перетворюється в HTML, PDF, DOCX.</li>
+                            <li>Філософія: фокус на <strong>змісті</strong>, а не на зовнішньому вигляді.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Чому він настільки популярний?</h2>
                     <ul>
-                        <li>Проста мова розмітки для форматування тексту.</li>
-                        <li>Читабельність: документ легко читати навіть без форматування.</li>
-                        <li>Конвертація: легко перетворюється в HTML, PDF, DOCX.</li>
-                        <li>Філософія: фокус на змісті, а не на зовнішньому вигляді.</li>
+                        <li><strong>Простота:</strong> Синтаксис інтуїтивно зрозумілий і легко запам'ятовується.</li>
+                        <li><strong>Швидкість:</strong> Ви форматуєте текст, не відриваючи рук від клавіатури.</li>
+                        <li><strong>Портативність:</strong> Файли `.md` — це звичайний текст, який можна відкрити
+                            будь-де.</li>
+                        <li><strong>Сумісність:</strong> Ідеально працює з системами контролю версій, як-от Git.</li>
                     </ul>
-                </div>
+                </section>
             </section>
 
             <section>
                 <h2>Markdown vs. MS Word</h2>
-                <table class="comparison-table">
+                <table class="comparison-table" style="font-size: 35px;">
                     <thead>
                         <tr>
                             <th>Критерій</th>
@@ -76,6 +94,11 @@
                                     class="icon"><br>Ідеально</td>
                             <td>❌<br>Жахливо</td>
                         </tr>
+                        <tr>
+                            <td>Ідеальний для...</td>
+                            <td>Документації, нотаток, README</td>
+                            <td>Ну... для... Не знаю</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -85,14 +108,16 @@
                     data-background-image="https://images.unsplash.com/photo-1517694712202-1428bc648c2a?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.4">
                     <h2>Частина 2: Базовий синтаксис</h2>
+                    <aside class="notes">
+                        На цьому етапі можна відкрити текстовий редактор і показувати приклади наживо.
+                    </aside>
                 </section>
                 <section>
                     <h3>Заголовки: Код</h3>
-                    <pre style="width: 70%; margin: auto;"><code class="markdown" data-trim>
+                    <pre><code class="markdown" data-trim>
 # Заголовок 1 рівня
 ## Заголовок 2 рівня
 ### Заголовок 3 рівня
-#### Заголовок 4 рівня
                     </code></pre>
                 </section>
                 <section>
@@ -101,130 +126,109 @@
                         <h1>Заголовок 1 рівня</h1>
                         <h2>Заголовок 2 рівня</h2>
                         <h3>Заголовок 3 рівня</h3>
-                        <h4>Заголовок 4 рівня</h4>
                     </div>
                 </section>
                 <section>
-                    <h3>Виділення тексту</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
+                    <h3>Виділення тексту: Код</h3>
+                    <pre><code class="markdown" data-trim>
 *Курсив* або _Курсив_
 **Жирний** або __Жирний__
 ~~Закреслений~~
-**_Жирний курсив_**
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <p><em>Курсив</em> або <i>Курсив</i></p>
-                                <p><strong>Жирний</strong> або <b>Жирний</b></p>
-                                <p><del>Закреслений</del></p>
-                                <p><strong><em>Жирний курсив</em></strong></p>
-                            </div>
-                        </div>
+***Жирний курсив***
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Виділення тексту: Результат</h3>
+                    <div class="result-box">
+                        <p><em>Курсив</em> або <i>Курсив</i></p>
+                        <p><strong>Жирний</strong> або <b>Жирний</b></p>
+                        <p><del>Закреслений</del></p>
+                        <p><strong><em>Жирний курсив</em></strong></p>
                     </div>
                 </section>
                 <section>
-                    <h3>Списки</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
+                    <h3>Списки: Код</h3>
+                    <pre><code class="markdown" data-trim>
 - Елемент 1
 - Елемент 2
-  - Вкладений
+  - Вкладений (відступ)
 
 1. Перший
 2. Другий
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Списки: Результат</h3>
+                    <div class="result-box">
+                        <ul>
+                            <li>Елемент 1</li>
+                            <li>Елемент 2
                                 <ul>
-                                    <li>Елемент 1</li>
-                                    <li>Елемент 2
-                                        <ul>
-                                            <li>Вкладений</li>
-                                        </ul>
-                                    </li>
+                                    <li>Вкладений (відступ)</li>
                                 </ul>
-                                <ol>
-                                    <li>Перший</li>
-                                    <li>Другий</li>
-                                </ol>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
+                        <ol>
+                            <li>Перший</li>
+                            <li>Другий</li>
+                        </ol>
                     </div>
                 </section>
                 <section>
-                    <h3>Посилання та зображення</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
-[Google](https://google.com)
+                    <h3>Посилання та зображення: Код</h3>
+                    <pre><code class="markdown" data-trim>
+[Google](https://google.com "Підказка")
 
 ![placeholder](https://via.placeholder.com/150)
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <p><a href="https://www.google.com" target="_blank">Google</a></p>
-                                <img src="https://via.placeholder.com/100" alt="альт-текст"
-                                    style="height: 70px; width: auto; background: white; border-radius: 5px;">
-                            </div>
-                        </div>
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Посилання та зображення: Результат</h3>
+                    <div class="result-box">
+                        <p><a href="https://www.google.com" target="_blank" title="Підказка">Google</a></p>
+                        <img src="https://via.placeholder.com/100" alt="альт-текст"
+                            style="height: 70px; width: auto; background: white; border-radius: 5px;">
                     </div>
                 </section>
                 <section>
-                    <h3>Цитати та лінії</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
+                    <h3>Цитати та лінії: Код</h3>
+                    <pre><code class="markdown" data-trim>
 > Це цитата.
+> > Вкладена цитата
+
 ---
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <blockquote>Це цитата.</blockquote>
-                                <hr>
-                            </div>
-                        </div>
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Цитати та лінії: Результат</h3>
+                    <div class="result-box">
+                        <blockquote>Це цитата.
+                            <blockquote>Вкладена цитата</blockquote>
+                        </blockquote>
+                        <hr>
                     </div>
                 </section>
                 <section>
-                    <h3>Вставка коду</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
+                    <h3>Вставка коду: Код</h3>
+                    <pre><code class="markdown" data-trim>
+Рядковий код: `print()`
+
+Блок коду:
 ```python
 def greet(name):
     print(f"Hello, {name}!")
-
-greet("World")
 ```
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <pre style="height: 100%;"><code class="python" data-trim>
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Вставка коду: Результат</h3>
+                    <div class="result-box">
+                        <p>Рядковий код: <code>print()</code></p>
+                        <p>Блок коду:</p>
+                        <pre style="height: 100%;"><code class="python" data-trim>
 def greet(name):
     print(f"Hello, {name}!")
-
-greet("World")
-                                </code></pre>
-                            </div>
-                        </div>
+                        </code></pre>
                     </div>
                 </section>
             </section>
@@ -236,88 +240,125 @@ greet("World")
                     <h2>Частина 3: Розширені можливості</h2>
                 </section>
                 <section>
-                    <h3>Таблиці</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
-| Заголовок 1 | Заголовок 2 |
-| :--- | :--- |
-| Cell 1 | Cell 2 |
-| Cell 3 | Cell 4 |
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:left">Заголовок 1</th>
-                                            <th style="text-align:left">Заголовок 2</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align:left">Cell 1</td>
-                                            <td style="text-align:left">Cell 2</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">Cell 3</td>
-                                            <td style="text-align:left">Cell 4</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3>Списки завдань</h3>
-                    <div class="demo-grid">
-                        <div class="grid-column">
-                            <p>Код:</p>
-                            <pre><code class="markdown" data-trim>
-- [x] Вивчити базовий синтаксис
-- [ ] Створити свою першу таблицю
-- [ ] Спробувати вставити діаграму
-                            </code></pre>
-                        </div>
-                        <div class="grid-column">
-                            <p>Результат:</p>
-                            <div class="result-box">
-                                <ul style="list-style-type: none; padding-left: 0;">
-                                    <li><input type="checkbox" checked disabled> Вивчити базовий синтаксис</li>
-                                    <li><input type="checkbox" disabled> Створити свою першу таблицю</li>
-                                    <li><input type="checkbox" disabled> Спробувати вставити діаграму</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3>Математичні формули (LaTeX): Код</h3>
-                    <p>Використовуйте `$` для рядкових формул та</p>
-                    <p>`$$` для блокових.</p>
+                    <h3>Таблиці: Код</h3>
                     <pre><code class="markdown" data-trim>
-Квадратне рівняння: `$ax^2 + bx + c = 0$`
-
-Формула Ейлера: `$$e^{i\pi} + 1 = 0$$`
+| Заголовок 1 | Центр | Справа |
+| :--- | :---: | ---: |
+| Cell 1 | Cell 2 | Cell 5 |
+| Cell 3 | Cell 4 | Cell 6 |
                     </code></pre>
                 </section>
+                <section>
+                    <h3>Таблиці: Результат</h3>
+                    <div class="result-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left">Заголовок 1</th>
+                                    <th style="text-align:center">Центр</th>
+                                    <th style="text-align:right">Справа</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left">Cell 1</td>
+                                    <td style="text-align:center">Cell 2</td>
+                                    <td style="text-align:right">Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Cell 3</td>
+                                    <td style="text-align:center">Cell 4</td>
+                                    <td style="text-align:right">Cell 6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <h3>Списки завдань: Код</h3>
+                    <pre><code class="markdown" data-trim>
+- [x] Вивчити базовий синтаксис
+- [ ] Створити свою першу таблицю
+- [ ] Опанувати діаграми Mermaid
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Списки завдань: Результат</h3>
+                    <div class="result-box">
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li><input type="checkbox" checked disabled> Вивчити базовий синтаксис</li>
+                            <li><input type="checkbox" disabled> Створити свою першу таблицю</li>
+                            <li><input type="checkbox" disabled> Опанувати діаграми Mermaid</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-color="rgb(70, 70, 100)">
+                    <h2>Частина 4: Корисні поради</h2>
+                </section>
+                <section>
+                    <h3>Порада 1: Екранування символів</h3>
+                    <p>Щоб відобразити спецсимвол, використовуйте зворотний слеш `\`.</p>
+                    <div class="demo-grid">
+                        <div class="grid-column">
+                            <p>Код:</p>
+                            <pre><code class="markdown" data-trim>
+Я хочу написати \*зірочку\*, 
+а не курсив.
+                            </code></pre>
+                        </div>
+                        <div class="grid-column">
+                            <p>Результат:</p>
+                            <div class="result-box">
+                                <p>Я хочу написати *зірочку*, а не курсив.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Порада 2: Використовуйте лінтери</h3>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon"
+                            style="height: 100px; width: 100px; margin-right: 30px; border-radius: 10px;">
+                        <ul>
+                            <li>Markdownlint — інструмент для перевірки стилю.</li>
+                            <li>Допомагає писати чистий та консистентний код.</li>
+                            <li>Доступний як плагін для VS Code та інших редакторів.</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <section>
                 <section
                     data-background-image="https://images.unsplash.com/photo-1635070049012-7f384a24824c?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.4">
-                    <h3>Математичні формули (LaTeX): Результат</h3>
+                    <h2>Частина 5: Магія</h2>
+                    <aside class="notes">
+                        Наголосіть, що це розширені функції, які підтримуються не всюди, але є надзвичайно потужними на
+                        таких платформах, як GitHub, GitLab, Obsidian та VS Code з плагінами.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Математичні формули: Код</h3>
+                    <pre><code class="markdown" data-trim>
+Рядкова: `$ax^2 + bx + c = 0$`
+
+Блокова: `$$e^{i\pi} + 1 = 0$$`
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Математичні формули: Результат</h3>
                     <div class="result-box">
-                        <p>Квадратне рівняння: $ax^2 + bx + c = 0$</p>
-                        <p>Формула Ейлера:</p>
+                        <p>Рядкова: $ax^2 + bx + c = 0$</p>
+                        <p>Блокова:</p>
                         $$e^{i\pi} + 1 = 0$$
                     </div>
                 </section>
                 <section>
                     <h3>Діаграми (Mermaid.js): Код</h3>
-                    <p>Опишіть діаграму текстом всередині блоку ` ```mermaid `.</p>
                     <pre><code class="markdown" data-trim>
 ```mermaid
 sequenceDiagram
@@ -333,11 +374,9 @@ sequenceDiagram
 ```
                     </code></pre>
                 </section>
-                <section
-                    data-background-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1740"
-                    data-background-opacity="0.4">
+                <section>
                     <h3>Діаграми (Mermaid.js): Результат</h3>
-                    <div class="result-box" style="width: 90%; margin: 20px auto;">
+                    <div class="result-box">
                         <div class="mermaid">
                             sequenceDiagram
                             participant User
@@ -358,30 +397,28 @@ sequenceDiagram
                 <section
                     data-background-image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.4">
-                    <h2>Частина 4: Екосистема та висновки</h2>
+                    <h2>Частина 6: Екосистема та висновки</h2>
                 </section>
                 <section>
                     <h3>Де використовується Markdown?</h3>
                     <ul class="icon-list">
                         <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="icon">
-                            GitHub & GitLab</li>
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stackoverflow.svg"
-                                class="icon"> Stack Overflow</li>
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/reddit.svg" class="icon">
-                            Reddit</li>
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" class="icon">
-                            Notion, Obsidian, etc.</li>
+                            Розробка: GitHub, GitLab (README, Issues)</li>
+                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/obsidian.svg" class="icon">
+                            Нотатки: Obsidian, Notion, Joplin</li>
+                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hugo.svg" class="icon">
+                            Статичні сайти: Hugo, Jekyll</li>
+                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" class="icon">
+                            Месенджери: Telegram, Slack, Discord</li>
                     </ul>
                 </section>
                 <section>
-                    <h3>Інструменти</h3>
-                    <ul class="icon-list">
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg"
-                                class="icon"> VS Code (з плагінами)</li>
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/obsidian.svg" class="icon">
-                            Obsidian, Typora</li>
-                        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pandoc.svg" class="icon">
-                            Pandoc (конвертер)</li>
+                    <h3>Висновок</h3>
+                    <p>Markdown — це не просто мова розмітки, а потужний інструмент для підвищення продуктивності.</p>
+                    <ul>
+                        <li>Дозволяє зосередитись на змісті.</li>
+                        <li>Легко керувати версіями документів.</li>
+                        <li>Працює на будь-якій платформі.</li>
                     </ul>
                 </section>
                 <section
@@ -389,8 +426,8 @@ sequenceDiagram
                     data-background-opacity="0.4">
                     <h3><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg" class="icon"
                             style="height: 50px; width: 50px;"> Практичне завдання</h3>
-                    <p><strong>Місія:</strong> Створити файл <code>PRACTICE.md</code></p>
-                    <p>Опишіть у ньому свій улюблений фільм або гру, використовуючи:</p>
+                    <p><strong>Місія:</strong> Створити файл <code>practice.md</code></p>
+                    <p>Опишіть у ньому свій улюблений фільм, використовуючи:</p>
                     <ol style="font-size: 0.7em;">
                         <li>Заголовок 1-го рівня з назвою.</li>
                         <li>Короткий опис (цитату) у вигляді блоку цитати.</li>
@@ -400,6 +437,10 @@ sequenceDiagram
                         <li>Таблицю з 2 колонок: "Персонаж" та "Актор/Акторка".</li>
                         <li>Посилання на трейлер на YouTube.</li>
                     </ol>
+                    <aside class="notes">
+                        Дайте аудиторії 5-7 хвилин на виконання завдання, після чого запропонуйте 1-2 бажаючим
+                        поділитися своїм результатом.
+                    </aside>
                 </section>
                 <section
                     data-background-image="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1740"
