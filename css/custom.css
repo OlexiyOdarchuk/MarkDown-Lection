@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --r-main-font: 'Inter', sans-serif;
+  --r-heading-font: 'Inter', sans-serif;
+  --r-main-color: #e0e0e0;
+  --r-heading-color: #42affa;
+  --r-background-color: #121212;
+  --r-link-color: #82caff;
+  --r-code-font: 'monospace';
+}
+
+body {
+  background-color: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: var(--r-heading-font);
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.reveal h1 {
+  font-size: 3.2em;
+}
+
+.reveal section img {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.reveal .slide-background-content {
+  background-size: cover;
+  background-position: center;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.demo-grid .grid-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-grid .grid-column p:first-child {
+  font-weight: bold;
+  color: var(--r-link-color);
+  margin-bottom: 10px;
+}
+
+.result-box {
+  border: 1px solid var(--r-link-color);
+  border-radius: 15px;
+  padding: 25px;
+  background-color: rgba(20, 20, 20, 0.88);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+  flex-grow: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal pre {
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(30, 30, 30, 0.88);
+  backdrop-filter: blur(8px);
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.reveal pre code {
+  max-height: 600px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  filter: invert(1) drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.icon-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.comparison-table .icon {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.reveal table th {
+  background-color: rgba(66, 175, 250, 0.2);
+}
+
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.reveal a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.speaker-notes {
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+}
