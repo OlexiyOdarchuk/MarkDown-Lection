@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Презентація: Повний курс по Markdown</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/markdown.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
     <link rel="stylesheet"
@@ -21,7 +22,11 @@
                 data-background-image="https://images.unsplash.com/photo-1550745165-9bc0b252726a?auto=format&fit=crop&w=1740"
                 data-background-opacity="0.5">
                 <h1>Markdown: Повний курс</h1>
-                <p>Як форматувати документи, не відволікаючись від змісту</p>
+                <p>Від нудних документів до крутих README за 30 хвилин</p>
+                <div class="fragment" style="margin-top: 50px;">
+                    <p style="font-size: 0.8em; color: #ff6b6b;">⚠️ Увага: після цієї лекції ви більше ніколи не зможете
+                        нормально працювати з Word</p>
+                </div>
                 <aside class="notes">
                     Почніть з питання до аудиторії: "Хто з вас вже чув про Markdown або використовував його?" Це
                     допоможе
@@ -42,14 +47,39 @@
                     <li class="fragment">Магія: формули та діаграми.</li>
                     <li class="fragment">Екосистема та практичне завдання.</li>
                 </ul>
+                <div class="fragment" style="margin-top: 30px;">
+                    <p style="font-size: 0.7em; color: #4ecdc4;">💡 Бонус: розкажу про секретні трюки, які знають тільки
+                        профі</p>
+                </div>
+            </section>
+
+            <!-- Новий слайд з статистикою -->
+            <section data-background-color="rgb(40, 40, 60)">
+                <h2>📊 Цікаві факти про Markdown</h2>
+                <div class="demo-grid">
+                    <div class="grid-column">
+                        <h3>GitHub</h3>
+                        <p>99.9% README файлів написано в Markdown</p>
+                        <div class="fragment">
+                            <p style="font-size: 0.8em; color: #ffd93d;">⭐ 100M+ репозиторіїв використовують .md</p>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <h4>Продуктивність</h4>
+                        <p>Розробники пишуть в 3x швидше</p>
+                        <div class="fragment">
+                            <p style="font-size: 0.8em; color: #6bcf7f;">⚡ Менше кліків = більше коду</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section>
                 <section>
                     <h2>Що таке Markdown?</h2>
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon"
-                            style="height: 100px; width: 100px; margin-right: 30px;">
+                    <div class="flex-center">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg"
+                            class="icon icon-large">
                         <ul>
                             <li>Проста мова розмітки для форматування тексту.</li>
                             <li>Читабельність: документ легко читати навіть без форматування.</li>
@@ -58,6 +88,16 @@
                         </ul>
                     </div>
                 </section>
+                <section>
+                    <h2>Коли намагаєшся форматувати в Word...</h2>
+                    <img src="assets/this_is_fine.jpg" alt="Мем 'This is fine' з собакою в палаючій кімнаті"
+                        class="meme-image">
+                    <div class="fragment" style="margin-top: 20px;">
+                        <p style="font-size: 0.8em; color: #ff6b6b;">🔥 Word: "Ой, ви хотіли просто виділити текст?
+                            Давайте я зламаю весь документ!"</p>
+                    </div>
+                </section>
+
                 <section>
                     <h2>Чому він настільки популярний?</h2>
                     <ul>
@@ -72,35 +112,66 @@
 
             <section>
                 <h2>Markdown vs. MS Word</h2>
-                <table class="comparison-table" style="font-size: 35px;">
-                    <thead>
-                        <tr>
-                            <th>Критерій</th>
-                            <th>Markdown</th>
-                            <th>MS Word</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Формат</td>
-                            <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg"
-                                    class="icon"><br>Простий текст (.md)</td>
-                            <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftword.svg"
-                                    class="icon"><br>Бінарний (.docx)</td>
-                        </tr>
-                        <tr>
-                            <td>Контроль версій</td>
-                            <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg"
-                                    class="icon"><br>Ідеально</td>
-                            <td>❌<br>Жахливо</td>
-                        </tr>
-                        <tr>
-                            <td>Ідеальний для...</td>
-                            <td>Документації, нотаток, README</td>
-                            <td>Ну... для... Не знаю</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div style="overflow-x: auto; max-width: 100%;">
+                    <table class="comparison-table" style="min-width: 600px; font-size: 0.8em;">
+                        <thead>
+                            <tr>
+                                <th style="min-width: 120px;">Критерій</th>
+                                <th style="min-width: 200px;">Markdown</th>
+                                <th style="min-width: 200px;">MS Word</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Формат</td>
+                                <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg"
+                                        class="icon icon-small"><br>Простий текст (.md)</td>
+                                <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftword.svg"
+                                        class="icon icon-small"><br>Бінарний (.docx)</td>
+                            </tr>
+                            <tr>
+                                <td>Контроль версій</td>
+                                <td><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg"
+                                        class="icon icon-small"><br>Ідеально</td>
+                                <td>❌<br>Жахливо</td>
+                            </tr>
+                            <tr>
+                                <td>Ідеальний для...</td>
+                                <td>Документації, нотаток, README</td>
+                                <td>Ну... для... Не знаю</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>А ось як це виглядає в реальності...</h2>
+                <div class="meme-container" style="max-width: 80%; margin: 0 auto;">
+                    <img src="assets/distracted_boyfriend.jpg"
+                        alt="Мем 'Невірний хлопець': розробник, його дівчина MS Word і Markdown"
+                        class="full-width-image" style="max-width: 100%; height: auto;">
+                    <p class="meme-text" style="top: 40%; left: 20%; font-size: 0.9em;">Markdown</p>
+                    <p class="meme-text" style="top: 50%; left: 55%; font-size: 0.9em;">Розробник</p>
+                    <p class="meme-text" style="top: 55%; left: 80%; font-size: 0.9em;">MS Word</p>
+                </div>
+            </section>
+
+            <!-- Інтерактивний квіз -->
+            <section data-background-color="rgb(60, 40, 80)">
+                <h2>🧠 Швидкий квіз</h2>
+                <p>Що означає цей Markdown код?</p>
+                <pre><code class="markdown" data-trim>
+**Жирний** текст з `кодом`
+                    </code></pre>
+                <div class="fragment">
+                    <div class="result-box" style="margin-top: 20px;">
+                        <p><strong>Жирний</strong> текст з <code>кодом</code></p>
+                    </div>
+                </div>
+                <div class="fragment" style="margin-top: 20px;">
+                    <p style="font-size: 0.8em; color: #4ecdc4;">🎉 Правильно! Ви вже розумієте основи!</p>
+                </div>
             </section>
 
             <section>
@@ -179,15 +250,14 @@
                     <pre><code class="markdown" data-trim>
 [Google](https://google.com "Підказка")
 
-![placeholder](https://via.placeholder.com/150)
+![placeholder](assets/placeholder.png)
                     </code></pre>
                 </section>
                 <section>
                     <h3>Посилання та зображення: Результат</h3>
                     <div class="result-box">
                         <p><a href="https://www.google.com" target="_blank" title="Підказка">Google</a></p>
-                        <img src="https://via.placeholder.com/100" alt="альт-текст"
-                            style="height: 70px; width: auto; background: white; border-radius: 5px;">
+                        <img src="assets/placeholder.png" alt="Зображення-заглушка" class="placeholder-image">
                     </div>
                 </section>
                 <section>
@@ -225,7 +295,7 @@ def greet(name):
                     <div class="result-box">
                         <p>Рядковий код: <code>print()</code></p>
                         <p>Блок коду:</p>
-                        <pre style="height: 100%;"><code class="python" data-trim>
+                        <pre class="full-height"><code class="python" data-trim>
 def greet(name):
     print(f"Hello, {name}!")
                         </code></pre>
@@ -275,6 +345,64 @@ def greet(name):
                     </div>
                 </section>
                 <section>
+                    <h2>Коли намагаєшся зробити складну таблицю...</h2>
+                    <div style="max-width: 80%; margin: 0 auto;">
+                        <img src="assets/table_flip.gif" alt="Гіфка, де людина в гніві перевертає стіл"
+                            class="meme-image" style="max-width: 100%; height: auto; max-height: 400px;">
+                    </div>
+                    <div class="fragment" style="margin-top: 20px;">
+                        <p style="font-size: 0.8em; color: #ff6b6b; text-align: center;">💥 "Чому таблиця не
+                            вирівнюється?!" - кожен розробник</p>
+                    </div>
+                </section>
+
+                <!-- Секретні трюки -->
+                <section data-background-color="rgb(40, 60, 40)">
+                    <h2>🔮 Секретні трюки профі</h2>
+                    <div class="demo-grid">
+                        <div class="grid-column">
+                            <h3>Емодзі в заголовках</h3>
+                            <pre><code class="markdown" data-trim>
+# 🚀 Мій проект
+## 📝 Документація
+### ⚡ Швидкий старт
+                            </code></pre>
+                        </div>
+                        <div class="grid-column">
+                            <h3>Результат</h3>
+                            <div class="result-box">
+                                <h1 style="font-size: 1.5em;">🚀 Мій проект</h1>
+                                <h2 style="font-size: 1.2em;">📝 Документація</h2>
+                                <h3 style="font-size: 1em;">⚡ Швидкий старт</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Слайд з корисними посиланнями -->
+                <section data-background-color="rgb(60, 40, 60)">
+                    <h2>🛠️ Корисні інструменти</h2>
+                    <div class="icon-list">
+                        <li class="fragment">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg"
+                                class="icon">
+                            <strong>VS Code:</strong> Markdown Preview Enhanced
+                        </li>
+                        <li class="fragment">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typora.svg" class="icon">
+                            <strong>Typora:</strong> WYSIWYG редактор
+                        </li>
+                        <li class="fragment">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stackedit.svg" class="icon">
+                            <strong>StackEdit:</strong> Онлайн редактор
+                        </li>
+                        <li class="fragment">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon">
+                            <strong>Mark Text:</strong> Реальний час прев'ю
+                        </li>
+                    </div>
+                </section>
+                <section>
                     <h3>Списки завдань: Код</h3>
                     <pre><code class="markdown" data-trim>
 - [x] Вивчити базовий синтаксис
@@ -285,7 +413,7 @@ def greet(name):
                 <section>
                     <h3>Списки завдань: Результат</h3>
                     <div class="result-box">
-                        <ul style="list-style-type: none; padding-left: 0;">
+                        <ul class="task-list">
                             <li><input type="checkbox" checked disabled> Вивчити базовий синтаксис</li>
                             <li><input type="checkbox" disabled> Створити свою першу таблицю</li>
                             <li><input type="checkbox" disabled> Опанувати діаграми Mermaid</li>
@@ -319,14 +447,40 @@ def greet(name):
                 </section>
                 <section>
                     <h3>Порада 2: Використовуйте лінтери</h3>
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg" class="icon"
-                            style="height: 100px; width: 100px; margin-right: 30px; border-radius: 10px;">
+                    <div class="flex-center">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/markdown.svg"
+                            class="icon icon-large icon-bordered">
                         <ul>
                             <li>Markdownlint — інструмент для перевірки стилю.</li>
                             <li>Допомагає писати чистий та консистентний код.</li>
                             <li>Доступний як плагін для VS Code та інших редакторів.</li>
                         </ul>
+                    </div>
+                </section>
+
+                <!-- Слайд з типовыми ошибками -->
+                <section data-background-color="rgb(80, 40, 40)">
+                    <h2>❌ Типові помилки новачків</h2>
+                    <div class="demo-grid">
+                        <div class="grid-column">
+                            <h3>Неправильно</h3>
+                            <pre><code class="markdown" data-trim>
+#Заголовок без пробілу
+**Жирний* без закриваючої зірочки
+-Список з дефісом замість зірочки
+                            </code></pre>
+                        </div>
+                        <div class="grid-column">
+                            <h3>Правильно</h3>
+                            <pre><code class="markdown" data-trim>
+# Заголовок з пробілом
+**Жирний** з двома зірочками
+- Список з пробілом після дефісу
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class="fragment" style="margin-top: 20px;">
+                        <p style="font-size: 0.8em; color: #4ecdc4;">💡 Лінтер автоматично знайде ці помилки!</p>
                     </div>
                 </section>
             </section>
@@ -335,7 +489,10 @@ def greet(name):
                 <section
                     data-background-image="https://images.unsplash.com/photo-1635070049012-7f384a24824c?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.4">
-                    <h2>Частина 5: Магія</h2>
+                    <div class="flex-center">
+                        <h2>Частина 5: Магія</h2>
+                        <img src="assets/mind_blown.gif" alt="Гіфка 'Mind Blown' - вибух мозку" class="magic-gif">
+                    </div>
                     <aside class="notes">
                         Наголосіть, що це розширені функції, які підтримуються не всюди, але є надзвичайно потужними на
                         таких платформах, як GitHub, GitLab, Obsidian та VS Code з плагінами.
@@ -346,7 +503,8 @@ def greet(name):
                     <pre><code class="markdown" data-trim>
 Рядкова: `$ax^2 + bx + c = 0$`
 
-Блокова: `$$e^{i\pi} + 1 = 0$$`
+Блокова: `$$e^{i
+pi} + 1 = 0$$`
                     </code></pre>
                 </section>
                 <section>
@@ -391,6 +549,40 @@ sequenceDiagram
                         </div>
                     </div>
                 </section>
+
+                <!-- Додаткові типи діаграм -->
+                <section data-background-color="rgb(40, 40, 80)">
+                    <h2>🎨 Ще більше діаграм!</h2>
+                    <div class="demo-grid">
+                        <div class="grid-column">
+                            <h3>Flowchart</h3>
+                            <pre><code class="markdown" data-trim>
+```mermaid
+flowchart TD
+    A[Початок] --> B{Markdown?}
+    B -->|Так| C[Використовуй!]
+    B -->|Ні| D[Вивчи Markdown]
+    D --> C
+    C --> E[Кінець]
+```
+                            </code></pre>
+                        </div>
+                        <div class="grid-column">
+                            <h3>Результат</h3>
+                            <div class="result-box">
+                                <div class="mermaid">
+                                    flowchart TD
+                                    A[Початок] --> B{Markdown?}
+                                    B -->|Так| C[Використовуй!]
+                                    B -->|Ні| D[Вивчи Markdown]
+                                    D --> C
+                                    C --> E[Кінець]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </section>
 
             <section>
@@ -424,11 +616,11 @@ sequenceDiagram
                 <section
                     data-background-image="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.4">
-                    <h3><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg" class="icon"
-                            style="height: 50px; width: 50px;"> Практичне завдання</h3>
-                    <p><strong>Місія:</strong> Створити файл <code>practice.md</code></p>
+                    <h3><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg"
+                            class="icon icon-medium"> Місія (майже) нездійсненна</h3>
+                    <p><strong>Ваше завдання:</strong> Створити файл <code>practice.md</code></p>
                     <p>Опишіть у ньому свій улюблений фільм, використовуючи:</p>
-                    <ol style="font-size: 0.7em;">
+                    <ol class="task-description">
                         <li>Заголовок 1-го рівня з назвою.</li>
                         <li>Короткий опис (цитату) у вигляді блоку цитати.</li>
                         <li><strong>Жирний</strong> та <em>курсивний</em> текст.</li>
@@ -437,24 +629,29 @@ sequenceDiagram
                         <li>Таблицю з 2 колонок: "Персонаж" та "Актор/Акторка".</li>
                         <li>Посилання на трейлер на YouTube.</li>
                     </ol>
+                    <div class="fragment" style="margin-top: 20px;">
+                        <p style="font-size: 0.8em; color: #ffd93d;">⏰ Час: 20 хвилин. Почали!</p>
+                    </div>
                     <aside class="notes">
                         Дайте аудиторії 5-7 хвилин на виконання завдання, після чого запропонуйте 1-2 бажаючим
                         поділитися своїм результатом.
                     </aside>
                 </section>
+
+
                 <section
                     data-background-image="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1740"
                     data-background-opacity="0.5">
                     <h2>Дякую за увагу!</h2>
                     <h3>Запитання?</h3>
                     <p style="margin-top: 50px;">
-                        <a href="https://github.com/OlexiyOdarchuk" onclick="return true;">
+                        <a href="https://github.com/OlexiyOdarchuk">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" class="icon"
                                 style="height: 30px; width: 30px;">
                             /iShawyha
                         </a>
                         &nbsp;&nbsp;&nbsp;
-                        <a href="https:/t.me/NeShawyha" onclick="return true;">
+                        <a href="https:/t.me/NeShawyha">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" class="icon"
                                 style="height: 30px; width: 30px;">
                             /NeShawyha
